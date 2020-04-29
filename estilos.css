@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+/*comentario*/
+
+body{
+	background-color: #00FFFF;
+}
+
+#carmelo{		/*estas centrando la foto de carmelo*/
+	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto;
+}
+
+#head1{			/*estas centrando el video*/
+	background-color: #ff00ff;
+}
+#video{
+	display: block;
+ 	margin-left: auto;
+ 	margin-right: auto
+}
+
+#bienvenida{
+	text-align:center;
+}
+
+
+
