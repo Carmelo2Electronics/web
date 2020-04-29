@@ -11,54 +11,46 @@
 
 	<h1>Project 30</h1>
 
-	<p>
-	En este proyecto vamos a mandar correos electronicos desde una interfas grafica de Java usando la libreria javax.mail.
-	</p>
+	<p> En este proyecto vamos a mandar correos electronicos desde una interfas grafica de Java usando la libreria javax.mail.</p>
 	
-	<p>
-	El programa corre en Windows o Raspberry Pi, Cuando se ejecuta en Rasppberry se pueden recolectan valores de temperatura, 
-	usando la terjeta de Adafruit Max31855 y un termopar, en nuestro caso usamos: 
-	Thermocouple Type-K Glass Braid Insulated Stainless Steel Tip. El circuito de conexiones se muestra abajo. 
-	</p>
+	<p> El programa corre en Windows o Raspberry Pi, cuando se ejecuta en Rasppberry se pueden recolectan valores de temperatura, usando la tarjeta de Adafruit Max31855 y un termopar, en nuestro caso usamos: Thermocouple Type-K Glass Braid Insulated Stainless Steel Tip. El circuito de conexiones se muestra abajo. </p>
 	
-	<p> Hay algunos puntos a tener en cuenta para ejecutar este programa: </p>
+	<p> Cuando el programa se ejecuta en Windows, se fija un valor de temperatura de 100°C, con el se pueden correr pruebas. Cabe aclarar que las funcionalidades del programa son bien expuestas, solo cuando se ejecuta en Raspberry Pi. </p>
 	
-		<ul>
-			<li> <p> Nada de eso va a trabajar si la direccion imail del correo que se encarga de mandar los mensajes, 
-			no fue habilitada para permitir aplicaciones "menos seguras", usa una cuenta de gmail para hacer esto. 
-			Hay videos en Youtube que te dicen como hacerlo.  </p></li>
-			
-			<li> <p> Las cuentas de email que se encargan de recibir los correos, no necesitan de lo anterior. </p> </li>
-			
-			<li> <p> El programa queda sujeto a que los servidores de correo lo atiendan, esto, no siempre es asi. 
-			El programa te avisara cuando el envio de un correo a fallado o el caso contrario, cuando se ha enviado. 
-			El programa en si no se bloquea, pero, si se queda esperando ser atendido por el servidor de correos. </p> </li>
-			
-			<li> <p> Cuando corra el programa en Raspberry Pi, podras ver todas las funiones del programa en ejecucion, pero, 
-			debes de instalar la libreria Pi4J en la Raspberry (ve en YouTube como hacer esto), esta se encarga de manejar la 
-			tarjeta de Adafruit. </p></li>
-			
-			<li> <p> Si tienes activadas las notificaciones de la cuenta o cuentas que reciben los correos te puede llegar 
-			una alerta de notificacion, por lo cual, puedes usar el programa como un enviador de alarmas, de hecho, 
-			esto se puede configurar en el programa. </p> </li>
-			
-			<li> <p> Hay muchas cosas en las cuales se puede emplear el codigo se este programa, nosotros lo empleamos 
-			para monitoriar la temperatura de un refrijarador de laboratorio, mandar una alerta cuanda la temperatura 
-			sale de valores termicos establecidos como minimo y maximo, tomar una lectura de temperatura cada determinado 
-			tiempo y guardar en un archivo de texto plano, la hora en la que se toma la muestra y la temperatura.  </p> </li>
-			
-			<li> <p> Se cuidadoso con los valores introducidos al programa, evita en lo posible, estar mandando correos 
-			en un mismo momento </li> </p>
-
-		</ul>
+	<p> El programa fue realizado para mantener vigilado un refrijerador de laboratorio, mandar imails de alerta cuando los valores de temperatura salgan de un intervalo dado, tambien se toman muestars de los valores de temperatura, y estos, son guardados en archivo de texto plano, los archivos son enviados por imail cada determinado tiempo. </p>
 	
-	<p>
-	Los códigos de programación están en el repositorio.
-	</p>
+	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
 	
-	<p>
- 	Esperamos que te sea muy util como referencia para algun otro proyecto o para su empleo tal y como esta hecho.
-	</p>
+	<ol>
+		<li> La direccion imail (de gmail) que vas a usar para mandar mensajes, debe de permitir "APP no seguras", sino es asi, nada va a funcionar. </li> 
+		<li> Instalar Java Development Kit (JDK). En tu computadora </li>
+		<li> Instalar IDE Eclipse. </li>
+		<li> Tener una Raspberry Pi, lista para usarse. </li>	
+		<li> Instalar en Raspberry la libreria Pi4J </li>		
+		<li> Descargar el archivo con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>		
+		<li> Importar el programa Java a el IDE Eclipse. </li>
+		<li> Generar un ejecutable (.jar), en el IDE Eclipse. </li>
+		<li> Transferir el ejecutable generado a Raspberry Pi.</li>
+		<li> Correr el ejecutable en la Raspberry Pi </li>	
+		<li> Realizar las conexiones que se muestran en el diagrama. </li>			
+		<li> Hay muchos tutoriales en YouTube que te pueden ayudar, consultalos. </li>	
+	</ol>
+ 	
+	<p> Hay algunos puntos a tener en cuenta para ejecutar este programa: </p>	
+	
+	<ul>			
+		<li> Las cuentas de email que se encargan de recibir los correos, no necesitan permitir "APP no seguras". </li>			
+		<li> El programa queda sujeto a que los servidores de correo lo atiendan, esto, no siempre es asi. El programa te avisara cuando el envio de un correo a fallado o el caso contrario, cuando se ha enviado. El programa en si no se bloquea, pero, si se queda esperando ser atendido por el servidor de correos. </li>			
+		<li> Si tienes activadas las notificaciones de la cuenta o cuentas que reciben los correos te puede llegar una alerta de notificacion, por lo cual, puedes usar el programa como un enviador de alarmas, de hecho, esto se puede configurar en el programa. </li>
+		<li> Se cuidadoso con los valores introducidos al programa, evita en lo posible, estar mandando correos en un mismo momento </li>
+	</ul>	
+	
+	<p> El video solo muestra al proyecto en operación, después de generar el archivo ejecutable y de ser transferirlo a la Raspberry Pi. </p>
+	
+	<p> Ve el video sirve como referencia para el uso del programa. </p>
+	
+	<p> Esperamos que te sea muy útil como referencia para algún otro proyecto. </p>
+	
 	
 	<h2 align="center"> Conexiones </h2>
 	
@@ -79,7 +71,6 @@
 
 	<br>
 	<br>
-	
 	
 	<h4><a href="https://github.com/Carmelo2Electronics/Project30Java" target="_blank"> Repository Java</a></h4>
 
