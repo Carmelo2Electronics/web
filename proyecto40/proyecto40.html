@@ -15,17 +15,31 @@
 	
 	<p> El programa se puede ejecutar desde una PC o desde una Raspberry Pi. Para que el programa se ejecute desde una PC, se debe de tener conectado a un puerto USB un Arduino Uno, cuando se ejecute en una Raspberry Pi esto no es necesario. </p>
 	
-	<p> El programa fue realizado para dar ciclos programados de luz y oscuridad a un …… en un laboratorio de Biología Molecular.  </p>
+	<p> El programa fue realizado para dar tratamientos de luz pulsada a células que expresan proteínas sensibles a la luz, en un laboratorio de Biología Molecular. </p>
 	
 	<p> El programa puede atender hasta tres usuarios, cada uno asociado a un LED o arreglo de LEDs.  La unidad de tiempo mínima que se puede programar es un segundo, la máxima, realmente no esta limitada, pero, podemos decir que son muchas horas. En cuanto a los ciclos de trabajo tampoco hay una limitación clara. Es importante aclarar que todos los ciclos de trabajo sólo pueden ser regulares, esto es, siempre se van a repetir los mismos tiempos de encendido y apagado de los LEDs. </p>
 	
 	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
 	
 	<ol>
-		<li>  </li> 
-		<li>  </li>
-		<li>  </li>
-		<li>  </li>	
+		<li> Instalar Java Development Kit (JDK). En tu computadora </li> 
+		<li> Instalar IDE Eclipse. </li>
+		<li> Generar un ejecutable (.jar), en el IDE Eclipse. </li>
+			<p> Si estas en Raspberry Pi </p>
+				<ol>
+					<li> Transferir el ejecutable generado a Raspberry Pi.  </li>
+					<li> Instalar en Raspberry la librería Pi4J, su última version. </li>			
+					<li> Realizar las conexiones que se muestran en el diagrama propias de Raspberry Pi <li>
+					<li> Correr el ejecutable en la Raspberry Pi </li>
+				</ol>
+		
+		
+		
+		<li> Transferir el ejecutable generado a Raspberry Pi, . </li>
+		
+		
+		
+			
 		<li> Instalar en Raspberry la librería Pi4J </li>		
 		<li> Descargar el archivo con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>		
 		<li> Importar el programa Java a el IDE Eclipse. </li>
