@@ -11,13 +11,13 @@
 
 	<h1>Project 40</h1>
 
-	<p> Con este proyecto vamos a controlar tres LEDs o arreglo de LEDs de alta potencia. Desde una interfaz gráfica de Java. </p>
+	<p> En este proyecto vamos a controlar LEDs o arreglo de LEDs de alta potencia, desde una interfaz gráfica de Java. </p>
 	
 	<p> El programa se puede ejecutar desde una PC o desde una Raspberry Pi. Para que el programa se ejecute desde una PC, se debe de tener conectado a un puerto USB un Arduino Uno, cuando se ejecute en una Raspberry Pi esto no es necesario. </p>
 	
 	<p> El programa fue realizado para dar tratamientos de luz pulsada a células que expresan proteínas sensibles a la luz, en un laboratorio de Biología Molecular. </p>
 	
-	<p> El programa puede atender hasta tres usuarios, cada uno asociado a un LED o arreglo de LEDs.  La unidad de tiempo mínima que se puede programar es un segundo, la máxima, realmente no esta limitada, pero, podemos decir que son muchas horas. En cuanto a los ciclos de trabajo tampoco hay una limitación clara. Es importante aclarar que todos los ciclos de trabajo sólo pueden ser regulares, esto es, siempre se van a repetir los mismos tiempos de encendido y apagado de los LEDs. </p>
+	<p> El programa puede atender hasta tres usuarios (GPIO_1, GPIO_2 y GPIO_3), cada uno asociado a un LED o arreglo de LEDs.  La unidad de tiempo mínima que se puede programar es un segundo, ya sea para tiempo de LEDs encendido o apagado, con esos tiempos de encendido o apagado se formará un ciclo de trabajo, los ciclos de trabajo siempre van a tener los mismos valores. </p>
 	
 	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
 	
@@ -25,26 +25,57 @@
 		<li> Instalar Java Development Kit (JDK). En tu computadora </li> 
 		<li> Instalar IDE Eclipse. </li>
 		<li> Descargar los archivos con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>
-		<li> Generar un ejecutable (.jar), en el IDE Eclipse. </li>
+		<li> Generar un ejecutable (.jar), en el IDE Eclipse. El archivo .jar va a ser útil ya sea para PC o Rasppberry Pi. </li>
 			<p> Si estas en Raspberry Pi: </p>
 				<ol>
 					<li> Tener una Raspberry Pi, lista para usarse. </li>
 					<li> Transferir el ejecutable generado a Raspberry Pi.  </li>
 					<li> Instalar en Raspberry la librería Pi4J, su última version. </li>			
-					<li> Realizar las conexiones que se muestran en el diagrama propias de Raspberry Pi. </li>
+					<li> Realizar las conexiones que se muestran en el diagrama de abajo. Considera la tabla de de conexionado de abajo. </li>
 					<li> Correr el ejecutable en la Raspberry Pi. </li>
 				</ol>
 			<p> Si estas en PC: </p>
 				<ol>
 					<li> Cargar el programa de Arduino en tarjeta Arduino Uno. </li>
-					<li> Realizar las conexiones que se muestran en el diagrama propias de PC. </li>
+					<li> Realizar las conexiones que se muestran en el diagrama de abajo. Considera la tabla de de conexionado de abajo.  </li>
 					<li> Correr el ejecutable en la PC. </li>
 				</ol>	
 		<p> </p>			
 		<li> Hay muchos tutoriales en YouTube que te pueden ayudar, consultalos. </li>	
 	</ol>
 	
- 	
+	<br>
+	
+	<h3> Tabla de Conexiones </h3>
+	
+	<table>
+		<tr>
+			<th style="text-align:center"> Programa </th>
+			<th style="text-align:center"> Raspberry Pi </th> 
+			<th style="text-align:center"> Arduino </th>
+	  	</tr>
+		<tr>
+			<td style="text-align:center"> GPIO_1 </td>
+			<td style="text-align:center"> Pin GPIO1 </td>
+			<td style="text-align:center"> Pin 2 </td>
+		</tr>
+		<tr>
+			<td style="text-align:center"> GPIO_2 </td>
+			<td style="text-align:center"> Pin GPIO2 </td>
+			<td style="text-align:center"> Pin 3 </td>
+		</tr>	
+		<tr>
+			<td style="text-align:center"> GPIO_3 </td>
+			<td style="text-align:center"> Pin GPIO3 </td>
+			<td style="text-align:center"> Pin 4 </td>
+		</tr>
+	</table>
+	
+	<p> Los pines de la Raspberry Pi, son de acuerdo a la libreria Pi4J.  </p>
+	
+	<br>
+
+
 	<p> Hay algunos puntos a tener en este programa: </p>	
 	
 	<ul>			
