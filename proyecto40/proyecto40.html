@@ -79,16 +79,20 @@
 	<p> Hay algunos puntos a tener en este programa: </p>	
 	
 	<ul>			
-		<li> El diagrama de conexiones, solo muestran la conexión de un único GPIO el GPIO_1 el cual está asociado a un único usuario, si la intención es tener dos o tres usuarios hay que dulicar o triplicar las conexiones presentadas. </li>					
-		<li> El driver que se usa para controlar los LEDs es: BUCKPUCK 3021-D-E-1000   </li>			
-		<li>  </li>	
+		<li> Las resistencias que aparecen en el diagrama las tres son de 220 Ohms, los preset son 5 KOhms (lineales), para las fuentes de voltaje V1, V2 y V3 puedes usar la misma fuente o fuentes diferentes. </li>					
+		<li> No es necesario armar todo el circuito puedes usar solo uno o dos  GPIO. </li>			
+		<li> Es muy buena práctica colocar un amperímetro a la salida de los LEDs y ajustar con el preset el valor de corriente deseado. </li>	
+		<li> Los LEDs con los que trabajamos son de 3 Watt de potencia, estos deben de estar montados sobre un disipador y pegados al disipador con grasa térmica. Hay una amplio surtido de colores de led, nosotros usamos blanco puro.</li>
+		<li> Si solo conectas un único LED al circuito, el voltaje mínimo de tu fuente debe de ser de 5Volts. En arreglos es muy buena practica usar fuentes de 12 Volts. Si haces haces arreglos, toma en cuenta que cada led tira aproximadamente 4 Volts. </li>
+		<li> Ve la hoja de datos del driver, en ella te dan una muy buena idea de los arreglos que puedes hacer. </li>
+		<li> No pierdas de vista la energía que vas a obligar a los LEDs a disipar ni tampoco la máxima corriente que puede manejar el driver, en este nuestro caso 1000 mAmpers </li>
+		<li> Para el video solo hemos montado un único GPIO sobre PC, y solo un LED. Usa el video como referencia de uso del programa. </li>
 	</ul>	
 	
-	<p> El video solo muestra al proyecto, después de generar el archivo ejecutable y de ser transferirlo a la Raspberry Pi. </p>
+	<p> El video solo muestra al proyecto, después de generar el archivo ejecutable y de ser transferirlo a una PC y de haber cargado Arduino Uno con el programa. </p>
 	
-	<p>  </p>
-	
-	<p> Esperamos que te sea muy útil como referencia para algún otro proyecto. </p>
+	<p> Esperamos que te sea muy útil para tus proyecto. </p>
+
 	
 	<h2 align="center"> Conexiones </h2>
 	
