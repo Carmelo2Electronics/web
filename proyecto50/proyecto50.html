@@ -1,10 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<meta charset="UTF-8"/>
+<title>pro40</title>
 
-</body>
+<link rel="stylesheet" type="text/css" href="proyecto40estilos.css">
+
+</head>
+	<body>
+
+	<h1>Project 40</h1>
+
+	<p> En este proyecto vamos a controlar LEDs o arreglo de LEDs de alta potencia, desde una interfaz gráfica de Java. </p>
+	
+	<p> El programa se puede ejecutar desde una PC o desde una Raspberry Pi. Para que el programa se ejecute desde una PC, se debe de tener conectado a un puerto USB un Arduino Uno, cuando se ejecute en una Raspberry Pi esto no es necesario. </p>
+	
+	<p> El programa fue realizado para dar tratamientos de luz pulsada a células que expresan proteínas sensibles a la luz, en un laboratorio de Biología Molecular. </p>
+	
+	<p> El programa puede atender hasta tres usuarios (GPIO_1, GPIO_2 y GPIO_3), cada uno asociado a un LED o arreglo de LEDs.  La unidad de tiempo mínima que se puede programar es un segundo, ya sea para tiempo de LEDs encendido o apagado, con esos tiempos de encendido o apagado se formará un ciclo de trabajo, los ciclos de trabajo siempre van a tener los mismos valores. </p>
+	
+	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
+	
+	<ol>
+		<li> Instalar Java Development Kit (JDK). En tu computadora </li> 
+		<li> Instalar IDE Eclipse. </li>
+		<li> Descargar los archivos con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>
+		<li> Generar un ejecutable (.jar), en el IDE Eclipse. El archivo .jar va a ser útil ya sea para PC o Rasppberry Pi. </li>
+			<p> Si estas en Raspberry Pi: </p>
+				<ol>
+					<li> Tener una Raspberry Pi, lista para usarse. </li>
+					<li> Transferir el ejecutable generado a Raspberry Pi.  </li>
+					<li> Instalar en Raspberry la librería Pi4J, su última version. </li>			
+					<li> Realizar las conexiones que se muestran en el diagrama de abajo. Considera la tabla de de conexionado de abajo. </li>
+					<li> Correr el ejecutable en la Raspberry Pi. </li>
+				</ol>
+			<p> Si estas en PC: </p>
+				<ol>
+					<li> Instalar IDE Arduino. </li>
+					<li> Cargar el programa de Arduino en tarjeta Arduino Uno. </li>
+					<li> Realizar las conexiones que se muestran en el diagrama de abajo. Considera la tabla de de conexionado de abajo.  </li>
+					<li> Correr el ejecutable en la PC. </li>
+				</ol>	
+		<p> </p>			
+		<li> Hay muchos tutoriales en YouTube que te pueden ayudar, consultalos. </li>	
+	</ol>
+	
+	<br>
+	
+	<h3> Tabla de Conexiones </h3>
+	
+	<table>
+		<tr>
+			<th style="text-align:center"> Programa </th>
+			<th style="text-align:center"> Raspberry Pi </th> 
+			<th style="text-align:center"> Arduino </th>
+	  	</tr>
+		<tr>
+			<td style="text-align:center"> GPIO_1 </td>
+			<td style="text-align:center"> Pin GPIO1 </td>
+			<td style="text-align:center"> Pin 2 </td>
+		</tr>
+		<tr>
+			<td style="text-align:center"> GPIO_2 </td>
+			<td style="text-align:center"> Pin GPIO2 </td>
+			<td style="text-align:center"> Pin 3 </td>
+		</tr>	
+		<tr>
+			<td style="text-align:center"> GPIO_3 </td>
+			<td style="text-align:center"> Pin GPIO3 </td>
+			<td style="text-align:center"> Pin 4 </td>
+		</tr>
+	</table>
+	
+	<p> Los pines de la Raspberry Pi, son de acuerdo a la libreria Pi4J.  </p>
+	
+	<br>
+
+
+	<p> Hay algunos puntos a tener en este programa: </p>	
+	
+	<ul>			
+		<li> Las resistencias que aparecen en el diagrama las tres son de 220 Ohms, los preset son 5 KOhms (lineales), para las fuentes de voltaje V1, V2 y V3 puedes usar la misma fuente o fuentes diferentes. Las tomas de 5 Volts se deben tomar de la tarjeta Arduino o Raspberry Pi, según sea el caso. </li>					
+		<li> No es necesario armar todo el circuito puedes usar solo uno o dos  GPIO. </li>			
+		<li> Es muy buena práctica colocar un amperímetro a la salida de los LEDs y ajustar con el preset el valor de corriente deseado. </li>	
+		<li> Los LEDs con los que trabajamos son de 3 Watt de potencia, estos deben de estar montados sobre un disipador y pegados al disipador con grasa térmica. Hay una amplio surtido de colores de led, nosotros usamos blanco puro.</li>
+		<li> Si solo conectas un único LED al circuito, el voltaje mínimo de tu fuente debe de ser de 5Volts. En arreglos es muy buena practica usar fuentes de 12 Volts. Si haces haces arreglos, toma en cuenta que cada led tira aproximadamente 4 Volts. </li>
+		<li> Ve la hoja de datos del driver, en ella te dan una muy buena idea de los arreglos que puedes hacer. </li>
+		<li> No pierdas de vista la energía que vas a obligar a los LEDs a disipar ni tampoco la máxima corriente que puede manejar el driver, en este nuestro caso 1000 mAmpers </li>
+		<li> Para ajustar y poner en marcha un GPIO: </li>
+			<ol>
+				<li> Recorre el preset a su valor más bajo. </li>
+				<li> Conecta los LEDs y la fuente de alimentación, esta puede ser de 5 a 12 Volts </li>
+				<li> Corre el programa en tu PC o Raspberry pi. </li>
+				<li> Haz lo que te pide el programa: selecciona el GPIO, en cuestión (que estamos ajustando) y da un nombre de usuario de GPIO </li>
+				<li> Activa el botón LIGHT ON/OFF de tal forma que el piloto adyacente al boton este en blanco. Los LEDs no van a prender. </li>
+				<li> Aumenta el valor del preset hasta que los LEDs enciendan. </li>
+				<li> Si, tienes puesto un amperímetro a la salida de los LEDs en ese momento puede poner el valor de corriente de los LEDs que te interese, lo mejor es no estar más allá de 700 mAmpers, recuerda que el driver es hasta 1000 mAmpers. </li>
+				<li> Prueba con el botón LIGHT ON/OFF prender y apagar los LEDs. </li>
+				<li> Despues de todo lo anterior, presiona el botón CONFIGURE y configura tus ciclos de trabajo, o si lo deseas da una hora de inicio programada con el botón DELAY o pulsa el botón START. </li>
+				<li> Cada GPIO debe de ser ajustado de forma independiente. </li>
+				<li> Asegurate que tu fuente o fuentes suministren la corriente que les vas a demandar. </li>
+			</ol>	
+		<li> Para el video solo hemos montado un único GPIO sobre PC, y solo un LED. Usa el video como referencia de uso del programa. </li>
+	</ul>	
+	
+	<p> El video solo muestra al proyecto, después de generar el archivo ejecutable y de ser transferirlo a una PC y de haber cargado Arduino Uno con el programa. </p>
+	
+	<p> Esperamos que te sea muy útil para tus proyecto. </p>
+
+	
+	<h2 align="center"> Conexiones </h2>
+	
+	<br>
+	
+	<br>
+
+	<img id="imagen1" src="proyecto40imagenes/proyecto 40-1.png" alt="ima1" width="748" height="690">
+	
+	<br>
+	<br>
+
+	<h3 align="center"> Ver video en YouTube <a href="https://youtu.be/_wS8todBxj0" target="_blank">go to</a> </h3>
+
+	<br>
+	<br>
+
+	<iframe id="videoProyecto" width="650" height="449" src="https://www.youtube.com/embed/_wS8todBxj0" allowfullscreen="true"></iframe>
+
+	<br>
+	<br>
+	
+	<h4><a href="https://github.com/Carmelo2Electronics/Project40Java" target="_blank"> Repository Java</a></h4>
+	
+	<h4><a href="https://github.com/Carmelo2Electronics/Project40Arduino" target="_blank"> Repository Arduino</a></h4>
+
+	<h2><a href="https://carmelo2electronics.github.io/web/" target="_self"> Home</a></h2>
+	
+	<br>
+	<br>
+	
+
+	</body>
 </html>
