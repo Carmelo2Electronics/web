@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>pro60</title>
+
+<link rel="stylesheet" type="text/css" href="proyecto60estilos.css">
+
+</head>
+	<body>
+
+	<h1>Project 60</h1>
+
+	<p> En este proyecto vamos a graficar con JFreechar datos enviados desde Arduino Uno y si lo deseas, guardar los valores recibidos en un archivo de texto plano, para su posterior análisis. </p>
+	
+	<p> Usamos La libreria jSerialComm, para recolectar los datos que envía Arduino Uno y posteriormente se colocan en la gráfica, esto sucede en tiempo real. </p>
+	
+	<p> Arduino Uno en nuestro caso, tiene conectado el sensor MLX90614, el cual es un sensor sin contacto de temperatura. </p>
+	
+	<p> Teniendo en cuenta algunas consideraciones se puede enviar datos al graficador desde cualquier otro sensor conectado a Arduino Uno.  </p>
+	
+	<p> Si deseas usar otro sensor, ve con detenimiento el código de Arduino, este te va a servir de guia. Lo importante es escribir en el puerto serial el valor a ser graficado, con el formato definido en el programa de Arduino que se muestra. </p>
+	
+	<p> Por defecto las gráficas de JFreeChart tiene un popup menu que puedes ver dando click izquierdo sobre la gráfica, en él hemos colocado 3 items mas estos son: Max. Value, Min. Value y Save Data. Después de activar alguno de ellos debes de dar click derecho sobre la gráfica para liberar los cursores de la gráfica. </p> 
+	
+	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
+	
+	<ol>
+		<li> Instalar Java Development Kit (JDK). En tu computadora </li> 
+		<li> Instalar IDE Eclipse. </li>
+		<li> Descargar los archivos con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>
+		<li> Generar un ejecutable (.jar), en el IDE Eclipse. </li>
+		<li> Instalar IDE Arduino. </li>
+		<li> Instalar en el Ide de Arduino la libreria: Adafruit_MLX90614. </li>
+		<li> Cargar el programa de Arduino que está en el repositorio en tarjeta Arduino Uno. </li>
+		<li> Has las conecciones entre Arduino uno y el sensor. </li>	
+		<li> Una vez que tengas hecho lo anterior, conecta y desconecta la tarjeta arduino del puerto USB y corre el programa de Java </li>
+		<li> Hay muchos tutoriales en YouTube que te pueden ayudar, consultalos. </li>	
+	</ol>
+
+	<p> El video solo muestra al proyecto, después de generar el archivo ejecutable y de ser transferirlo a una PC y de haber cargado Arduino Uno con el programa. </p>
+	
+	<p> Esperamos que te sea muy útil para tus proyecto. </p>
+
+	
+	<h3 align="center"> Ver video en YouTube <a href="https://youtu.be/_wS8todBxj0" target="_blank">go to</a> </h3>
+
+	<br>
+	<br>
+
+	<iframe id="videoProyecto" width="650" height="449" src="https://www.youtube.com/embed/_wS8todBxj0" allowfullscreen="true"></iframe>
+
+	<br>
+	<br>
+	
+	<h4><a href="https://github.com/Carmelo2Electronics/Project60Java" target="_blank"> Repository Java</a></h4>
+	
+	<h4><a href="https://github.com/Carmelo2Electronics/Project60Arduino" target="_blank"> Repository Arduino</a></h4>
+
+	<h2><a href="https://carmelo2electronics.github.io/web/" target="_self"> Home</a></h2>
+	
+	<br>
+	<br>
+	
+
+	</body>
+</html>
