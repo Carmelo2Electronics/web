@@ -11,38 +11,22 @@
 
 	<h1>Project 60</h1>
 
-	<p> En este proyecto vamos a graficar con JFreechar datos enviados desde Arduino Uno y si lo deseas, guardar los valores recibidos en un archivo de texto plano, para su posterior análisis. </p>
+	<p> En este proyecto usamos el sensor Omron D6T-44L-06 el cual, es una arreglo de 4X4 sensores de temperatura, los datos medidos por el arreglo los sobreponemos en una secuencia de video tomada por una webcam, el sensor y la webcam tienen aproximadamente el mismo foco, esto está limitado por  por la forma física de cada dispositivo. </p>
 	
-	<p> Usamos La libreria jSerialComm, para recolectar los datos que envía Arduino Uno y posteriormente se colocan en la gráfica, esto sucede en tiempo real. </p>
+	<p> El programa que maneja el sensor está en un Arduino Uno, este programa limita las muestras de temperatura de 10.0 - 99.9  °C, el sensor tiene un intervalo de trabajo un poco mayor. </p>
 	
-	<p> Arduino Uno en nuestro caso, tiene conectado el sensor MLX90614, el cual es un sensor sin contacto de temperatura. </p>
+	<p> Para recibir los datos que manada Arduino Uno a la PC usamos la librería jSerialComm y para tomar video la librería  Webcam Capture. </p>
 	
-	<p> Teniendo en cuenta algunas consideraciones se puede enviar datos al graficador desde cualquier otro sensor conectado a Arduino Uno.  </p>
+	<p> El programa funciona bajo Windows y está hecho en JAVA. </p>
 	
-	<p> Si deseas usar otro sensor, ve con detenimiento el código de Arduino, este te va a servir de guia. Lo importante es escribir en el puerto serial el valor a ser graficado, con el formato definido en el programa de Arduino que se muestra. </p>
+	<p> La intención de haber hecho este programa fue probar la fiabilidad del sensor en cuanto a distancia, para su posterior implementación en otro proyecto, lo cual no se llevó a cabo. Podemos concluir que las medidas de temperatura del sensor solo son confiables a muy poca distancia 50 a 60 cm.  </p>
 	
-	<p> Por defecto las gráficas de JFreeChart tiene un popup menu que puedes ver dando click izquierdo sobre la gráfica, en él hemos colocado 3 items mas estos son: Max. Value, Min. Value y Save Data. Después de activar alguno de ellos debes de dar click derecho sobre la gráfica para liberar los cursores de la gráfica. </p> 
+	<p> Para poner a funcionar este proyecto ve los pasos a seguir de los proyectos anteriores, no son descritos aquí y que estos son básicamente los mismos.  </p> 
 	
-	<p>	Para poder poner a funcionar este proyecto es necesario: </p>
-	
-	<ol>
-		<li> Instalar Java Development Kit (JDK). En tu computadora </li> 
-		<li> Instalar IDE Eclipse. </li>
-		<li> Descargar los archivos con los codigos de programacion, estan en el repositorio, ve a las liga de abajo. </li>
-		<li> Generar un ejecutable (.jar), en el IDE Eclipse. </li>
-		<li> Instalar IDE Arduino. </li>
-		<li> Instalar en el Ide de Arduino la libreria: Adafruit_MLX90614. </li>
-		<li> Cargar el programa de Arduino que está en el repositorio en tarjeta Arduino Uno. </li>
-		<li> Has las conecciones entre Arduino uno y el sensor. </li>	
-		<li> Una vez que tengas hecho lo anterior, conecta y desconecta la tarjeta arduino del puerto USB y corre el programa de Java </li>
-		<li> Hay muchos tutoriales en YouTube que te pueden ayudar, consultalos. </li>	
-	</ol>
+	<p> Los codigos de programacion estan en los repositorios, ve a las ligas de abajo. </p>
 
-	<p> El video solo muestra al proyecto, después de generar el archivo ejecutable y de ser transferirlo a una PC y de haber cargado Arduino Uno con el programa. </p>
-	
-	<p> Esperamos que te sea muy útil para tus proyecto. </p>
+	<p> Ve el video que presentamos, te puede servir para valorar la fiabilidad de la implementación de algo parecido. </p>
 
-	
 	<h3 align="center"> Ver video en YouTube <a href="https://youtu.be/_wS8todBxj0" target="_blank">go to</a> </h3>
 
 	<br>
